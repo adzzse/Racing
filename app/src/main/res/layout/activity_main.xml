@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/andb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutRacing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:inputType="number" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/moneyLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/sp1"
+        app:layout_constraintEnd_toEndOf="@+id/profitValue"
+        app:layout_constraintStart_toEndOf="@+id/profitValue" />
+
+
+    <TextView
+        android:id="@+id/sp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="0 m"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/sp1"
+        app:layout_constraintTop_toBottomOf="@+id/sp1" />
+
+    <TextView
+        android:id="@+id/profitTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/moneyTitle"
+        app:layout_constraintTop_toBottomOf="@+id/moneyTitle" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profitTitle" />
+
+    <TextView
+        android:id="@+id/betValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:text="0.0"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/betTitle"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/checkBox2"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
+    <EditText
+        android:id="@+id/bet2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:hint="0.0$"
+        android:inputType="number"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/bet1"
+        app:layout_constraintTop_toTopOf="@+id/bet1" />
+
+    <TextView
+        android:id="@+id/moneyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="15dp"
+        android:text="Money: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/moneyResult"
+        app:layout_constraintTop_toBottomOf="@+id/layoutRacing" />
+
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+
+        android:text="New game"
+        app:layout_constraintEnd_toStartOf="@+id/reset"
+        app:layout_constraintTop_toTopOf="@+id/btnStart" />
+
+    <TextView
+        android:id="@+id/betTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="25dp"
+        android:text="Bet ($): "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sp1"
+        app:layout_constraintEnd_toStartOf="@+id/betValue" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:text="Start"
+        app:layout_constraintBaseline_toBaselineOf="@+id/finish"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restart"
+
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnRefresh"
+        app:layout_constraintEnd_toEndOf="@+id/bet3"
+        app:layout_constraintStart_toEndOf="@+id/bet3" />
+
+    <TextView
+        android:id="@+id/profitValue"
+        android:layout_width="40dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginEnd="96dp"
+        android:text="0.0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/moneyLeft"
+        app:layout_constraintEnd_toStartOf="@+id/bet1"
+        app:layout_constraintStart_toStartOf="@+id/moneyTitle"
+        app:layout_constraintTop_toTopOf="@+id/moneyLeft" />
+
+    <TextView
+        android:id="@+id/sp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:text="0 m"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/profitValue"
+        app:layout_constraintTop_toBottomOf="@+id/profitTitle" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+
+    <EditText
+        android:id="@+id/bet3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:hint="0.0$"
+        android:inputType="number"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/bet2"
+        app:layout_constraintTop_toTopOf="@+id/bet2" />
+
+    <TextView
+        android:id="@+id/moneyResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="9dp"
+        android:text="100.0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/betTitle"
+        app:layout_constraintEnd_toStartOf="@+id/betTitle" />
+
+    <TextView
+        android:id="@+id/sp3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="26dp"
+        android:text="0 m"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRefresh"
+        app:layout_constraintStart_toStartOf="@+id/btnRefresh"
+        app:layout_constraintTop_toBottomOf="@+id/sp2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/bet1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="6dp"
+        android:hint="0.0$"
+        android:inputType="number"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/betTitle"
+        app:layout_constraintTop_toBottomOf="@+id/betTitle" />
+
+    <TextView
+        android:id="@+id/finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
