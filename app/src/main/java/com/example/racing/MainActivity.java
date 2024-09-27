@@ -102,17 +102,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final TextView[] textSpeed = {sp1, sp2, sp3};
         LinearLayout backgroundView = findViewById(R.id.layoutRacing);
 
-        // Create an animation
-        ObjectAnimator backgroundAnimator = ObjectAnimator.ofFloat(backgroundView, "translationX", 0f, -backgroundView.getWidth());
-        backgroundAnimator.setDuration(5000); // duration 5 seconds
-        backgroundAnimator.setRepeatCount(ObjectAnimator.INFINITE);
-        backgroundAnimator.setRepeatMode(ObjectAnimator.RESTART);
-        backgroundAnimator.start();
-
         // Initialize
         initFinishedList();
 
-        // Initialize Handlers and Runnables for Each SeekBar
         for (int i = 0; i < seekBars.length; i++) {
             int finalI = i;
             Handler handler = new Handler();
@@ -232,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         SharedPreferences sharedPreferences = getSharedPreferences("ResultData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("winner","The winner is: " + winner+1);
+        editor.putString("winner","The winner is: " + winner);
         editor.putFloat("profit", (float) profit);
         editor.putFloat("moneyLeft", (float) (moneyLeft + profitTotal)); // Update money left with profit
         editor.apply();
@@ -327,13 +319,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    // Reset lại Handlers và Runnables khi quay lại từ ResultActivity
     private void resetHandlersAndRunnables() {
-        // Đảm bảo rằng tất cả các Handler và Runnable đã được xóa trước khi tạo mới
         handlerList.clear();
         runnableList.clear();
 
-        // Tạo lại Handlers và Runnables cho mỗi SeekBar
         for (int i = 0; i < seekBars.length; i++) {
             int finalI = i;
             Handler handler = new Handler();
